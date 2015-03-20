@@ -21,5 +21,7 @@ class YamlParserTest extends FunSuite {
       assert(person.value == 3.1416)
       assert(person.score == "0")
       assert(person.languageSkills.length == 2)
+      assert(person.languageSkills(0) == LanguageSkill("Spanish", Native))
+      assert(person.languageSkills(1) == LanguageSkill("English", Professional))
   }
 }
