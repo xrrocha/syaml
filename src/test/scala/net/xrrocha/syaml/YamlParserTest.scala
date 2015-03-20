@@ -3,12 +3,12 @@ package syaml
 import org.scalatest.FunSuite
 
 class YamlParserTest extends FunSuite {
-  import Yaml._
+  import SYaml._
   
   test("Creates case class instance correctly") {
     import MyJsonProtocol._
     
-      val person = yaml"""
+      val person = syaml"""
           id: 7
           name: Neo Anderson
           value: 3.1416
