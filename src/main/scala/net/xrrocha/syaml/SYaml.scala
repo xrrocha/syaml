@@ -2,7 +2,7 @@ package syaml
 
 import spray.json.RootJsonFormat
 
-object Yaml {
+object SYaml {
   import scala.util.matching.Regex
   case class Conversion(regex: Regex, converter: String => String)
 
@@ -15,7 +15,7 @@ object Yaml {
   )
 
   implicit class YamlString(val sc: StringContext) extends AnyVal {
-    def yaml(args: Any*) = new {
+    def syaml(args: Any*) = new {
       def apply[A](implicit jsonFormat: RootJsonFormat[A]): A = {
         val yaml = sc.s(args: _*).stripMargin.trim
         val map = YamlParser.parse(yaml).get.asInstanceOf[Map[String, Any]]
